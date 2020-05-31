@@ -1,0 +1,45 @@
+<form #surveyForm="ngForm" (ngSubmit)="this.subitSurvey()">
+  <div class="container" *ngIf="this.fetched">
+      <div class="py-5 text-center" >
+        
+        <h2>{{this.survey.name}}</h2>
+        <p class="lead">
+         {{this.currentQ}} of {{this.questions.length}} Questions
+        </p>
+      </div>
+    
+      <div class="card m-3">
+        <div class="card-body">
+          <h3>{{this.questions[this.currentQ - 1].title}}</h3>
+        </div>
+      </div>
+      
+        <div class="card m-3">
+            <div class="card-body">
+              <div class="row mt-3" *ngFor="let item of this.options">
+                <div class="col">
+                  <div class="custom-control-lg custom-control custom-checkbox">
+                    <input class="custom-control-input" [attr.checked]="this.isSelected(item.id) ? true: null" id="{{item.id}}" type="checkbox" (click)="checkBoxClik($event)" />
+                    <label class="custom-control-label" for="{{item.id}}">
+                      {{item.text}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="container">
+            <div class="row">
+                <div class="col">
+                  <button *ngIf="!this.isFirstQuestion()" type="button" class="btn btn-lg btn-outline-primary" (click)="movePrev()">Previous</button>
+                </div>
+                <div class="col text-right">
+                  <button *ngIf="!this.isLastQuestion()" type="button" class="btn btn-lg btn-outline-primary" (click)="moveNext()">Next</button>
+        
+                  <button *ngIf="this.isLastQuestion()" type="submit" role="button" class="btn btn-lg btn-outline-primary">Submit</button>
+                </div>
+            </div>
+          </div>  
+    </div>    
+</form>

@@ -1,0 +1,23 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Compass Survey</h1>
+  <p class="lead">Select any of the following survey</p>
+</div>
+
+<div class="container">
+  <div class="card-deck mb-3 text-center" *ngFor="let survey of this.surveys;">
+    <div class="card mb-4 shadow-sm">
+      
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{survey.name}}</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Total Questions: {{ survey.questions.length }}</li>
+        </ul>
+        <a 
+        [routerLink]="['./survey', survey.id]"
+        routerLinkActive="router-link-active" 
+        role="button" 
+        class="btn btn-lg btn-block btn-outline-primary">Click here to start answering {{ survey.name }}</a>
+      </div>
+    </div>
+  </div>
+</div>

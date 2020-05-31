@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "compass-survey-app"
+    }
+  },
+  "defaultProject": "compass-survey-app",
+  "cli": {
+    "analytics": false
+  }
 }
