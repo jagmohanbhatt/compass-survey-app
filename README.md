@@ -15,3 +15,5 @@ Compass survey project uses survey-data.json as the source for data. Project use
 Project also uses angular services for state management. In an enerprise application, Ngrx could be the ideal replacement. In this project, sruvey.services plays a role of single source of truth. It uses SubjectBehaviour to expose its subscription model.
 
 "Survey" is created as an independed module which means, it is lazyily loaded. Module information is loaded when user clicks on a survey menu link.
+
+Bootstrap is used for designing purpose.
